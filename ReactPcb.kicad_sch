@@ -1,0 +1,65 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 6f583d00-760b-408f-8b95-0713ced08775)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 149.86 80.01) (size 21.59 10.16) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 3c10379d-9210-4e54-b737-57ea541eca38)
+    (property "Sheetname" "Power Gate" (at 149.86 79.2984 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "PowerGate.kicad_sch" (at 149.86 90.7546 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "ReactPcb"
+        (path "/6f583d00-760b-408f-8b95-0713ced08775" (page "4"))
+      )
+    )
+  )
+
+  (sheet (at 121.92 80.01) (size 21.59 10.16) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid b464d461-f4c7-466b-b91e-a1df46394564)
+    (property "Sheetname" "Capacitors" (at 121.92 79.2984 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "Capacitors.kicad_sch" (at 121.92 90.7546 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "ReactPcb"
+        (path "/6f583d00-760b-408f-8b95-0713ced08775" (page "3"))
+      )
+    )
+  )
+
+  (sheet (at 177.8 80.01) (size 21.59 10.16) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid e1b64885-d436-42a5-a5de-1e5603c87602)
+    (property "Sheetname" "Control" (at 177.8 79.2984 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "Control.kicad_sch" (at 177.8 90.7546 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "ReactPcb"
+        (path "/6f583d00-760b-408f-8b95-0713ced08775" (page "2"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
