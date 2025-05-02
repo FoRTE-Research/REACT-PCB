@@ -57,7 +57,6 @@ inline uint8_t stepCapUp(){
 // Returns 1 on success, 0 on failure
 inline uint8_t stepCapDown(){
     size_t i;
-//    for(i = (sizeof(cbpArray) / sizeof(cbpArray[0])); i--> 0;){
     for(i = 0; i < sizeof(cbpArray) / sizeof(cbpArray[0]); i++){
         if(contractCapBank3State(cbpArray[i])){
             return 1;
@@ -97,43 +96,22 @@ int main(void)
 
     __bis_SR_register(GIE);         // Enable interrupts
 
-//    initCapBank(&bank1);
-//    initCapBank(&bank2);
-//    initCapBank(&bank3);
-//    initCapBank(&bank4);
-
     // Init all capacitor banks
     size_t i;
     for(i = sizeof(cbpArray) / sizeof(cbpArray[0]); i --> 0;){
         initCapBank(cbpArray[i]);
     }
 
-    PM5CTL0 &= ~LOCKLPM5;           // Disable GPIO high-z
-
-	// Let's first test voltage alarm comparator
-
-    // Vhigh_alarm is P2.1, I guess Vhigh going high is bad
-    // Vlow_alarm is P2.0, I guess Vlow going low is bad
+    // Vhigh_alarm is P2.1
+    // Vlow_alarm is P2.0
     // Comparator output is push-pull so no need for pullup/down
     P2DIR &= ~(BIT0 | BIT1);        // Comparator alarm input
 
+    PM5CTL0 &= ~LOCKLPM5;           // Disable GPIO high-z
+
+    // Application code goes here
     while(1){
         __no_operation();
-//        if(REACT_V_HIGH()){        // If Vhigh_alarm high (bad)
-//            RGB_R_ON();
-//        }else{
-//            RGB_R_OFF();
-//        }
-//        if(REACT_V_LOW()){     // If Vlow_alarm low (bad)
-//            RGB_B_ON();
-//        }else{
-//            RGB_B_OFF();
-//        }
-//        if(!REACT_V_HIGH() && !REACT_V_LOW()){    // If Vhigh_alarm low and Vlow_alarm high (good)
-//            RGB_G_ON();
-//        }else{
-//            RGB_G_OFF();
-//        }
     }
 
 	return 0;
